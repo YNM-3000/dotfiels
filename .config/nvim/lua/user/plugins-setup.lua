@@ -170,9 +170,6 @@ return packer.startup(function(use)
 	-- lazygit
 	use("kdheepak/lazygit.nvim")
 
-	-- gitblame
-	use("tveskag/nvim-blame-line")
-
 	-- diffview
 	use("sindrets/diffview.nvim")
 

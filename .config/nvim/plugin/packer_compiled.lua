@@ -214,11 +214,6 @@ _G.packer_plugins = {
     path = "/Users/congguang.tang/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
     url = "https://github.com/windwp/nvim-autopairs"
   },
-  ["nvim-blame-line"] = {
-    loaded = true,
-    path = "/Users/congguang.tang/.local/share/nvim/site/pack/packer/start/nvim-blame-line",
-    url = "https://github.com/tveskag/nvim-blame-line"
-  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/Users/congguang.tang/.local/share/nvim/site/pack/packer/start/nvim-cmp",

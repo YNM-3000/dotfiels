@@ -13,7 +13,7 @@ gitsigns.setup({
 		changedelete = { hl = "GitSignsChange", text = "▎", numhl = "GitSignsChangeNr", linehl = "GitSignsChangeLn" },
 	},
 	signcolumn = true, -- Toggle with `:Gitsigns toggle_signs`
-	numhl = false, -- Toggle with `:Gitsigns toggle_numhl`
+	numhl = true, -- Toggle with `:Gitsigns toggle_numhl`
 	linehl = false, -- Toggle with `:Gitsigns toggle_linehl`
 	word_diff = false, -- Toggle with `:Gitsigns toggle_word_diff`
 	watch_gitdir = {
@@ -25,7 +25,7 @@ gitsigns.setup({
 	current_line_blame_opts = {
 		virt_text = true,
 		virt_text_pos = "eol", -- 'eol' | 'overlay' | 'right_align'
-		delay = 1000,
+		delay = 200,
 		ignore_whitespace = false,
 	},
 	current_line_blame_formatter_opts = {
@@ -44,6 +44,6 @@ gitsigns.setup({
 		col = 1,
 	},
 	yadm = {
-		enable = false,
+		enable = true,
 	},
 })

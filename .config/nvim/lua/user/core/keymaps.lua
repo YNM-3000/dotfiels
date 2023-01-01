@@ -115,21 +115,28 @@ keymap.set("n", "<leader>gc", ":LazyGitConfig<cr>", opts)
 keymap.set("n", "<leader>gf", ":LazyGitFilter<cr>", opts)
 keymap.set("n", "<leader>gff", ":LazyGitFilterCurrentFile<cr>", opts)
 
--- gitblame
-keymap.set("n", "<leader>gb", ":ToggleBlameLine<cr>", opts)
+-- gitsign
+keymap.set("n", "<leader>gb", ":Gitsigns toggle_current_line_blame<cr>", opts)
+keymap.set("n", "<leader>gx", ":Gitsigns toggle_deleted<cr>", opts)
+keymap.set("n", "<leader>gp", ":Gitsigns preview_hunk<cr>", opts)
+keymap.set("n", "<leader>gs", ":Gitsigns stage_hunk<cr>", opts)
+keymap.set("n", "<leader>gS", ":Gitsigns stage_buffer<cr>", opts)
+keymap.set("n", "<leader>gu", ":Gitsigns undo_stage_hunk<cr>", opts)
+keymap.set("n", "<leader>gr", ":Gitsigns reset_hunk<cr>", opts)
+keymap.set("n", "<leader>gt", ":Gitsigns diffthis<cr>", opts)
 
 -- diffview
 keymap.set("n", "<leader>gd", ":DiffviewOpen<cr>", opts)
 keymap.set("n", "<leader>gD", ":DiffviewClose<cr>", opts) -- Close the current diffview. You can also use :tabclose.
 keymap.set("n", "<leader>gh", ":DiffviewFileHistory %<cr>", opts) -- Opening file history for current branch:
 
--- git conflict
-keymap.set("n", "<leader>go", "<Plug>(git-conflict-ours)")
-keymap.set("n", "<leader>gt", "<Plug>(git-conflict-theirs)")
-keymap.set("n", "<leader>ga", "<Plug>(git-conflict-both)")
-keymap.set("n", "<leader>gx", "<Plug>(git-conflict-none)")
-keymap.set("n", "<leader>gp", "<Plug>(git-conflict-prev-conflict)")
-keymap.set("n", "<leader>gn", "<Plug>(git-conflict-next-conflict)")
+-- -- git conflict
+-- keymap.set("n", "<leader>go", "<Plug>(git-conflict-ours)")
+-- keymap.set("n", "<leader>gt", "<Plug>(git-conflict-theirs)")
+-- keymap.set("n", "<leader>ga", "<Plug>(git-conflict-both)")
+-- keymap.set("n", "<leader>gx", "<Plug>(git-conflict-none)")
+-- keymap.set("n", "<leader>gp", "<Plug>(git-conflict-prev-conflict)")
+-- keymap.set("n", "<leader>gn", "<Plug>(git-conflict-next-conflict)")
 
 -------------- term ------------------
 -- toggleterm
