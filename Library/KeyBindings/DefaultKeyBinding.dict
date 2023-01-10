@@ -1,0 +1,7 @@
+{
+    /* Home Button */
+    "\UF729" = "moveToBeginningOfLine:";
+
+    /* End Button */
+    "\UF72B" = "moveToEndOfLine:";
+}
