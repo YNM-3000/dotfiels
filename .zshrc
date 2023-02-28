@@ -90,7 +90,7 @@ plugins=(
   zsh-syntax-highlighting
   zsh-autosuggestions
   web-search
-  evalcache
+  # evalcache
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -149,7 +149,7 @@ source $ZSH/oh-my-zsh.sh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 # go env
 # eval "$(~/development/urbancompass/scripts/go activate)"
-_evalcache ~/development/urbancompass/scripts/go activate
+# _evalcache ~/development/urbancompass/scripts/go activate
 # export PATH="$HOME/development/urbancompass/build-support/go/sdk/bin/go"
-alias gg="$HOME/development/urbancompass/build-support/go/sdk/bin/go"
-alias grpc="$HOME/development/urbancompass/scripts/grpcreq"
+# alias gg="$HOME/development/urbancompass/build-support/go/sdk/bin/go"
+# alias grpc="$HOME/development/urbancompass/scripts/grpcreq"
