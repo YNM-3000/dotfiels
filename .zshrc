@@ -153,3 +153,4 @@ source $ZSH/oh-my-zsh.sh
 # export PATH="$HOME/development/urbancompass/build-support/go/sdk/bin/go"
 # alias gg="$HOME/development/urbancompass/build-support/go/sdk/bin/go"
 # alias grpc="$HOME/development/urbancompass/scripts/grpcreq"
+export PATH="/opt/homebrew/opt/node@18/bin:$PATH"

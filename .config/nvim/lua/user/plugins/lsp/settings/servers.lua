@@ -14,8 +14,8 @@ M.server_settings = {
 		name = "tailwindcss",
 	},
 	lua = {
-		name = "sumneko_lua",
-		settings = require("user.plugins.lsp.settings.sumneko_lua"),
+		name = "lua_ls",
+		settings = require("user.plugins.lsp.settings.lua_ls"),
 	},
 	py = {
 		name = "pyright",
