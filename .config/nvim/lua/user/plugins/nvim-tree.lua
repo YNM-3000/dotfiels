@@ -11,7 +11,7 @@ vim.g.loaded_netrwPlugin = 1
 vim.cmd([[ highlight NvimTreeIndentMarker guifg=#3FC5FF ]])
 
 nvimtree.setup({
-	open_on_setup = true,
+	-- open_on_setup = true, deprecated
 	reload_on_bufenter = true,
 	view = {
 		adaptive_size = true,
