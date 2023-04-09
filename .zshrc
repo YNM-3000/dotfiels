@@ -153,4 +153,19 @@ source $ZSH/oh-my-zsh.sh
 # export PATH="$HOME/development/urbancompass/build-support/go/sdk/bin/go"
 # alias gg="$HOME/development/urbancompass/build-support/go/sdk/bin/go"
 # alias grpc="$HOME/development/urbancompass/scripts/grpcreq"
+export VISUAL=nvim
+
+export EDITOR="$VISUAL"
+
 export PATH="/opt/homebrew/opt/node@18/bin:$PATH"
+
+function ranger_func {
+    ranger $*
+    local quit_cd_wd_file="$HOME/.ranger_quit_cd_wd"
+    if [ -s "$quit_cd_wd_file" ]; then
+        cd "$(cat $quit_cd_wd_file)"
+        true > "$quit_cd_wd_file"
+    fi
+}
+
+alias rn='ranger_func'

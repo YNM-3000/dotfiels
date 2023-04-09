@@ -39,7 +39,7 @@ local on_attach = function(client, bufnr)
 	keymap.set("n", "K", "<cmd>Lspsaga hover_doc<cr>", opts)
 	keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", opts)
 	keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<cr>", opts)
-	keymap.set("n", "<Leader>o", "<cmd>LSoutlineToggle<cr>", opts)
+	keymap.set("n", "<F6>", "<cmd>Lspsaga outline<cr>", opts)
 
 	if client.name == "tsserver" then
 		keymap.set("n", "<Leader>rf", ":TypescriptRenameFile<cr>")

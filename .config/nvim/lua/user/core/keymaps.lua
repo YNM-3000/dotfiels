@@ -138,11 +138,6 @@ keymap.set("n", "<leader>gh", ":DiffviewFileHistory %<cr>", opts) -- Opening fil
 -- keymap.set("n", "<leader>gp", "<Plug>(git-conflict-prev-conflict)")
 -- keymap.set("n", "<leader>gn", "<Plug>(git-conflict-next-conflict)")
 
--------------- term ------------------
--- toggleterm
-keymap.set("n", "<leader>tt", ":ToggleTerm direction=float<cr>", opts)
-keymap.set("n", "<leader>tl", ":ToggleTermSendVisualSelection <T_ID> direction=float<cr>", opts)
-
 -- vim-translator
 keymap.set({ "n", "v" }, "<leader>tc", ":Translate<cr>", opts) --Echo translation in the cmdline
 keymap.set({ "n", "v" }, "<leader>tw", ":TranslateW<cr>", opts) --Display translation in a window
@@ -151,16 +146,21 @@ keymap.set({ "n", "v" }, "<leader>th", ":TranslateH<cr>", opts) --Export transla
 keymap.set({ "n", "v" }, "<leader>tm", ":TranslateL<cr>", opts) --Display log message
 keymap.set({ "n", "v" }, "<leader>tx", ":TranslateX<cr>", opts) --Translate the text in clipboard
 
--- in term
-function _G.set_terminal_keymaps()
-	local _opts = { buffer = 0 }
-	vim.keymap.set("t", "<esc>", [[<C-\><C-n>]], _opts)
-	-- vim.keymap.set('t', 'jk', [[<C-\><C-n>]], opts)
-	vim.keymap.set("t", "<C-h>", [[<Cmd>wincmd h<CR>]], _opts)
-	vim.keymap.set("t", "<C-j>", [[<Cmd>wincmd j<CR>]], _opts)
-	vim.keymap.set("t", "<C-k>", [[<Cmd>wincmd k<CR>]], _opts)
-	vim.keymap.set("t", "<C-l>", [[<Cmd>wincmd l<CR>]], _opts)
-end
+-------------- term ------------------
+-- toggleterm
+-- keymap.set("n", "<leader>tt", ":ToggleTerm direction=float<cr>", opts)
+-- keymap.set("n", "<leader>tl", ":ToggleTermSendVisualSelection <T_ID> direction=float<cr>", opts)
 
--- if you only want these mappings for toggle term use term://*toggleterm#* instead
-vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")
+-- in term
+-- function _G.set_terminal_keymaps()
+-- 	local _opts = { buffer = 0 }
+-- 	vim.keymap.set("t", "<esc>", [[<C-\><C-n>]], _opts)
+-- 	-- vim.keymap.set('t', 'jk', [[<C-\><C-n>]], opts)
+-- 	vim.keymap.set("t", "<C-h>", [[<Cmd>wincmd h<CR>]], _opts)
+-- 	vim.keymap.set("t", "<C-j>", [[<Cmd>wincmd j<CR>]], _opts)
+-- 	vim.keymap.set("t", "<C-k>", [[<Cmd>wincmd k<CR>]], _opts)
+-- 	vim.keymap.set("t", "<C-l>", [[<Cmd>wincmd l<CR>]], _opts)
+-- end
+--
+-- -- if you only want these mappings for toggle term use term://*toggleterm#* instead
+-- vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")

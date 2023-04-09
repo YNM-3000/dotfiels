@@ -28,6 +28,9 @@ M.server_settings = {
 	go = {
 		name = "gopls", -- no need to install because of vim-go but need to be included in lspconfig
 	},
+	vue = {
+		name = "volar",
+	},
 }
 
 M.servers = {}

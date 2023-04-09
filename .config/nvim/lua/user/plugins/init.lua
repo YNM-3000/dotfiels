@@ -8,7 +8,7 @@ require("user.plugins.telescope")
 require("user.plugins.nvim-cmp")
 require("user.plugins.treesitter")
 require("user.plugins.trouble")
-require("user.plugins.toggleterm")
+-- require("user.plugins.toggleterm")
 -- arround way to set indicator color of bufferline
 -- vim.cmd([[highlight TablineSel cterm=underline,bold,underdouble gui=underline,bold,underdouble guibg=#f38ba8]])
 vim.api.nvim_set_hl(0, "TablineSel", {
@@ -36,3 +36,4 @@ require("user.plugins.leap")
 require("user.plugins.lsp")
 require("user.plugins.git")
 require("user.plugins.autopairs")
+require("user.plugins.neural")

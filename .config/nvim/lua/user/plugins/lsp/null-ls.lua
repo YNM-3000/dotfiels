@@ -41,8 +41,8 @@ end
 
 null_ls.setup({
 	sources = {
-		formatting.eslint_d,
 		formatting.prettier,
+		formatting.eslint_d,
 		formatting.stylua,
 		diagnostics.eslint_d,
 		-- diagnostics.cspell,

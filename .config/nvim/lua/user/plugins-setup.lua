@@ -145,8 +145,8 @@ return packer.startup(function(use)
 	-- trouble
 	use("folke/trouble.nvim")
 
-	-- term
-	use({ "akinsho/toggleterm.nvim", tag = "*" })
+	-- -- term
+	-- use({ "akinsho/toggleterm.nvim", tag = "*" })
 
 	-- leap
 	use("ggandor/leap.nvim")
@@ -173,8 +173,11 @@ return packer.startup(function(use)
 	-- diffview
 	use("sindrets/diffview.nvim")
 
-	-- conflict
+  -- conflict
 	use({ "akinsho/git-conflict.nvim", tag = "*" })
+
+	-- chatgpt
+	use({ "dense-analysis/neural"})
 
 	if packer_bootstrap then
 		require("packer").sync()
