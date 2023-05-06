@@ -169,3 +169,9 @@ function ranger_func {
 }
 
 alias rn='ranger_func'
+
+alias setWslProxy='export HOSTIP=$(cat /etc/resolv.conf|grep "nameserver"|cut -f 2 -d " ");export http_proxy="http://$HOSTIP:7890";export https_proxy="https://$HOSTIP:7890";export all_proxy="sock5://$HOSTIP:7890";export ALL_PROXY="socks5://$HOSTIP:7890"'
+alias unsetWslProxy='unset http_proxy;unset https_proxy;unset all_proxy;unset ALL_PROXY;'
+
+alias setGitProxy='git config --global http.proxy $HOSTIP:7890'
+alias unsetGitProxy='git config --global --unset http_proxy'
