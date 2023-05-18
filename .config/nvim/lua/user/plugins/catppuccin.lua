@@ -1,9 +1,16 @@
-local catppucin_ok, catppucin = pcall(require, "catppucin")
+local catppucin_ok, catppuccin = pcall(require, "catppuccin")
 if not catppucin_ok then
+	print("catppuccin not ok")
 	return
 end
 
-catppucin.setup({
+catppuccin.setup({
+	transparent_background = true,
+	-- dim_inactive = {
+	-- 	enabled = true,
+	-- 	shade = "dark",
+	-- 	peercentage = 0.15,
+	-- },
 	-- custom_highlights = function(color)
 	-- 	return {
 	-- 		TabLineSel = {
@@ -46,7 +53,7 @@ catppucin.setup({
 		harpoon = false,
 		hop = false,
 		illuminate = false,
-		leap = false,
+		leap = true,
 		lightspeed = false,
 		lsp_saga = false,
 		lsp_trouble = false,
@@ -71,7 +78,7 @@ catppucin.setup({
 		vim_sneak = false,
 		vimwiki = false,
 		which_key = false,
-		bufferline = false,
+		bufferline = true,
 
 		-- Special integrations, see https://github.com/catppuccin/nvim#special-integrations
 		dap = {
@@ -91,7 +98,7 @@ catppucin.setup({
 				information = { "italic" },
 			},
 			underlines = {
-				errors = { "underline" },
+				errors = { "undercurl" },
 				hints = { "underline" },
 				warnings = { "underline" },
 				information = { "underline" },
@@ -111,3 +118,4 @@ catppucin.setup({
 -- 	{ cterm = "underline,bold", gui = "underline,bold", guisp = "red" },
 -- 	false
 -- )
+vim.cmd.colorscheme("catppuccin")

@@ -175,3 +175,4 @@ alias unsetWslProxy='unset http_proxy;unset https_proxy;unset all_proxy;unset AL
 
 alias setGitProxy='git config --global http.proxy $HOSTIP:7890'
 alias unsetGitProxy='git config --global --unset http_proxy'
+export NODE_OPTIONS='--openssl-legacy-provider'
