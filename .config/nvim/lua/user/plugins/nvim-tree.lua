@@ -12,17 +12,26 @@ vim.cmd([[ highlight NvimTreeIndentMarker guifg=#3FC5FF ]])
 
 nvimtree.setup({
 	-- open_on_setup = true, deprecated
+	on_attach = function(bufnr)
+		local api = require("nvim-tree.api")
+
+		local function opts(desc)
+			return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+		end
+
+		api.config.mappings.default_on_attach(bufnr)
+
+		vim.keymap.set("n", "l", api.node.open.preview, opts("Open Preview"))
+		vim.keymap.set("n", "<C-o>", api.node.open.vertical, opts("Open: Vertical Split"))
+		vim.keymap.set("n", "h", api.node.navigate.parent_close, opts("Close Directory"))
+		vim.keymap.set("n", "A", api.tree.expand_all, opts("Expand All"))
+		vim.keymap.set("n", "?", api.tree.toggle_help, opts("Help"))
+		vim.keymap.set("n", "C", api.tree.change_root_to_node, opts("CD"))
+		vim.keymap.set("n", "Z", api.node.run.system, opts("Run System"))
+	end,
 	reload_on_bufenter = true,
 	view = {
 		adaptive_size = true,
-		mappings = {
-			custom_only = false,
-			list = {
-				{ key = "l", action = "preview" },
-				{ key = "<C-o>", action = "vsplit" },
-				{ key = "h", action = "close_node" },
-			},
-		},
 	},
 	renderer = {
 		root_folder_modifier = ":t",
