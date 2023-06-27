@@ -173,11 +173,14 @@ return packer.startup(function(use)
 	-- diffview
 	use("sindrets/diffview.nvim")
 
-  -- conflict
+	-- conflict
 	use({ "akinsho/git-conflict.nvim", tag = "*" })
 
 	-- chatgpt
-	use({ "dense-analysis/neural"})
+	use({ "dense-analysis/neural" })
+
+	-- java
+	use({ "mfussenegger/nvim-jdtls" })
 
 	if packer_bootstrap then
 		require("packer").sync()

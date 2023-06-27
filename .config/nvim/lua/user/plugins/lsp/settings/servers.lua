@@ -25,11 +25,15 @@ M.server_settings = {
 		name = "jsonls",
 		settings = require("user.plugins.lsp.settings.jsonls"),
 	},
-	go = {
-		name = "gopls", -- no need to install because of vim-go but need to be included in lspconfig
-	},
+	-- go = {
+	-- 	name = "gopls", -- no need to install because of vim-go but need to be included in lspconfig
+	-- },
 	vue = {
 		name = "volar",
+	},
+	java = {
+		name = "jdtls",
+		settings = require("user.plugins.lsp.settings.java"),
 	},
 }
 
@@ -39,6 +43,7 @@ for _, server in pairs(M.server_settings) do
 end
 
 M.formatter_and_linters = {
+	"google-java-format",
 	"prettier",
 	"stylua",
 	"eslint_d",
