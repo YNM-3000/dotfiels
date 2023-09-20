@@ -75,7 +75,7 @@ nvimtree.setup({
 					renamed = "",
 					untracked = "ﭟ",
 					deleted = "",
-					ignored = "驪",
+					ignored = "",
 				},
 			},
 		},
@@ -94,7 +94,7 @@ nvimtree.setup({
 		enable = true,
 		show_on_dirs = true,
 		icons = {
-			hint = "",
+			hint = "󱍀",
 			info = "",
 			warning = "",
 			error = "",

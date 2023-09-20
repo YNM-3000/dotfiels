@@ -30,6 +30,7 @@ M.server_settings = {
 	-- },
 	vue = {
 		name = "volar",
+		settings = require("user.plugins.lsp.settings.vue"),
 	},
 	java = {
 		name = "jdtls",
