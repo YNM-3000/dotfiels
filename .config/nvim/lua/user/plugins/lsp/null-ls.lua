@@ -41,6 +41,7 @@ end
 
 null_ls.setup({
 	sources = {
+		formatting.rustfmt,
 		formatting.google_java_format,
 		formatting.prettier,
 		formatting.eslint_d,

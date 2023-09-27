@@ -36,6 +36,9 @@ M.server_settings = {
 		name = "jdtls",
 		settings = require("user.plugins.lsp.settings.java"),
 	},
+	rust = {
+		name = "rust_analyzer",
+	},
 }
 
 M.servers = {}
@@ -44,6 +47,7 @@ for _, server in pairs(M.server_settings) do
 end
 
 M.formatter_and_linters = {
+	"rustfmt",
 	"google-java-format",
 	"prettier",
 	"stylua",
