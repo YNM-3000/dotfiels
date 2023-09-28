@@ -89,6 +89,7 @@ return packer.startup(function(use)
 	use("hrsh7th/cmp-path") -- source for file system paths
 	use("hrsh7th/cmp-cmdline") -- source for cmdline
 	use("saadparwaiz1/cmp_luasnip") -- source snippet completions
+	use("lvimuser/lsp-inlayhints.nvim") -- LSP inlay hint.
 	-- use("hrsh7th/cmp-nvim-lsp-signature-help") -- source for LSP signature
 
 	-- snippets
