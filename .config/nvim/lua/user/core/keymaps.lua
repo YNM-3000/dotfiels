@@ -14,6 +14,11 @@ local opts = { noremap = true, silent = true }
 -------------------- general keymaps ----------------------
 keymap.set({ "i", "v", "t", "c" }, "fd", "<ESC>", opts)
 
+keymap.set("n", "v'", 'vi"', opts)
+keymap.set("n", "c'", 'ci"', opts)
+keymap.set("n", "y'", 'yi"', opts)
+keymap.set("n", "d'", 'di"', opts)
+
 keymap.set("n", "<leader>nh", ":nohl<CR>", opts) -- clear search
 keymap.set("n", "<leader>-", "<C-x>") -- minus number
 keymap.set("n", "<leader>+", "<C-a>") -- add number
