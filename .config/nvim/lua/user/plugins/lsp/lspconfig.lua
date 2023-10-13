@@ -13,6 +13,12 @@ if not lsp_signature_ok then
 	return
 end
 
+local inlayhints_ok, inlayhints = pcall(require, "lsp-inlayhints")
+if not inlayhints_ok then
+	print("inlayhints not ok")
+	return
+end
+
 lsp_signature.setup({
 	fix_pos = true, -- set to true, the floating window will not auto-close until finish all parameters
 })
@@ -28,21 +34,25 @@ local on_attach = function(client, bufnr)
 	local opts = { noremap = true, silent = true, buffer = bufnr }
 
 	-- set keybinds
-	keymap.set("n", "gf", "<cmd>Lspsaga lsp_finder<cr>", opts)
+	keymap.set("n", "gf", "<cmd>Lspsaga finder<cr>", opts)
 	keymap.set("n", "gd", "<cmd>Lspsaga peek_definition<cr>", opts)
-	keymap.set("n", "<Leader>ca", "<cmd>Lspsaga code_action<cr>", opts)
-	keymap.set("n", "<Leader>rn", "<cmd>Lspsaga rename<cr>", opts)
+	keymap.set("n", "gd", "<cmd>Lspsaga peek_type_definition<cr>", opts)
+	keymap.set("n", "<F1>", "<cmd>Lspsaga code_action<cr>", opts)
+	keymap.set("n", "<F2>", "<cmd>Lspsaga rename<cr>", opts)
 	keymap.set("n", "gh", "<cmd>Lspsaga show_line_diagnostics<cr>", opts)
 	keymap.set("n", "gh", "<cmd>Lspsaga show_cursor_diagnostics<cr>", opts)
 	keymap.set("n", "<Tab>", "<cmd>Lspsaga diagnostic_jump_next<cr>", opts)
 	keymap.set("n", "<S-Tab>", "<cmd>Lspsaga diagnostic_jump_prev<cr>", opts)
 	keymap.set("n", "K", "<cmd>Lspsaga hover_doc<cr>", opts)
 	keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", opts)
-	keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<cr>", opts)
+	keymap.set("n", "gI", "<cmd>lua vim.lsp.buf.implementation()<cr>", opts)
 	keymap.set("n", "<F6>", "<cmd>Lspsaga outline<cr>", opts)
 
 	if client.name == "tsserver" then
 		keymap.set("n", "<Leader>rf", ":TypescriptRenameFile<cr>")
+	end
+	if client.name == "rust_analyzer" then
+		inlayhints.on_attach({ client, bufnr })
 	end
 end
 
