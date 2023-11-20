@@ -45,6 +45,7 @@ local kind_icons = {
 	Event = "",
 	Operator = "",
 	TypeParameter = "",
+  Codeium = "",
 }
 -- find more here: https://www.nerdfonts.com/cheat-sheet
 
@@ -101,6 +102,7 @@ cmp.setup({
 			vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
 			vim_item.menu = ({
 				nvim_lsp = "[LSP]",
+				codeium = "[Codeium]",
 				luasnip = "[Snippet]",
 				buffer = "[Buffer]",
 				path = "[Path]",
@@ -110,6 +112,7 @@ cmp.setup({
 	},
 	sources = cmp.config.sources({
 		{ name = "nvim_lsp" }, -- lsp
+		{ name = "codeium" },
 		-- { name = "nvim_lsp_signature_help" }, -- signature help use lsp_signature instead
 		{ name = "luasnip" }, -- snippets
 		{ name = "buffer" }, -- text within current buffer

@@ -38,6 +38,7 @@ M.server_settings = {
 	},
 	rust = {
 		name = "rust_analyzer",
+		-- settings = require("user.plugins.lsp.settings.rust"),
 	},
 }
 

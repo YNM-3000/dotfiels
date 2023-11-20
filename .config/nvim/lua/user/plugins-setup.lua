@@ -177,8 +177,17 @@ return packer.startup(function(use)
 	-- conflict
 	use({ "akinsho/git-conflict.nvim", tag = "*" })
 
-	-- chatgpt
-	use({ "dense-analysis/neural" })
+	-- code assitant
+	use({
+		"Exafunction/codeium.nvim",
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"hrsh7th/nvim-cmp",
+		},
+		config = function()
+			require("codeium").setup({})
+		end,
+	})
 
 	-- java
 	use({ "mfussenegger/nvim-jdtls" })
