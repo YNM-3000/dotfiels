@@ -78,6 +78,9 @@ return packer.startup(function(use)
 	-- indent blankline
 	use("lukas-reineke/indent-blankline.nvim")
 
+	-- rainbow delimiters
+	use("HiPhish/rainbow-delimiters.nvim")
+
 	-- fuzzy finding w/ telescope
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- dependency for better sorting performance
 	use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" }) -- fuzzy finder

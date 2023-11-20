@@ -3,13 +3,25 @@ if not indent_blankline_ok then
 	return
 end
 
+local highlight = {
+	"Error",
+	"Constant",
+	"String",
+	"Function",
+	"Statement",
+	"Type",
+	"Label",
+}
+
+vim.g.rainbow_delimiters = { highlight = highlight }
+
 indent_blankline.setup({
 	indent = {
 		char = "╎",
 	},
 	scope = {
 		char = "▏",
-		highlight = { "Error", "Constant", "DiagnosticOk", "Function", "Statement", "Type", "Label" },
+		highlight = highlight,
 		-- priority = 500,
 	},
 })
