@@ -1,2 +1,2 @@
 require("user.plugins.git.gitsigns")
-require("user.plugins.git.git-conflict")
+require("user.plugins.git.git-messenger")

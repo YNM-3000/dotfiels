@@ -82,6 +82,20 @@ return packer.startup(function(use)
 	use("HiPhish/rainbow-delimiters.nvim")
 
 	-- fuzzy finding w/ telescope
+	use({
+		"aaronhallaert/advanced-git-search.nvim",
+		requires = {
+			-- "nvim-telescope/telescope.nvim",
+			-- to show diff splits and open commits in browser
+			"tpope/vim-fugitive",
+			-- to open commits in browser with fugitive
+			"tpope/vim-rhubarb",
+			-- optional: to replace the diff from fugitive with diffview.nvim
+			-- (fugitive is still needed to open in browser)
+			-- "sindrets/diffview.nvim",
+		},
+	}) -- advanced git search extension for Telescope and fzf-lua
+
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- dependency for better sorting performance
 	use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" }) -- fuzzy finder
 
@@ -127,6 +141,9 @@ return packer.startup(function(use)
 	-- auto closing
 	use("windwp/nvim-autopairs") -- autoclose parens, brackets, quotes, etc...
 	use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" }) -- autoclose tags
+
+	-- code fold
+	use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" })
 
 	-- mark file and navigation
 	use("ThePrimeagen/harpoon")
@@ -180,6 +197,9 @@ return packer.startup(function(use)
 	-- conflict
 	use({ "akinsho/git-conflict.nvim", tag = "*" })
 
+	-- diffview
+	use("rhysd/git-messenger.vim")
+	----------- AI
 	-- code assitant
 	use({
 		"Exafunction/codeium.nvim",

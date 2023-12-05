@@ -85,6 +85,23 @@ keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>")
 keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>")
 keymap.set("n", "<leader>fd", "<cmd>Telescope diagnostics<cr>")
 keymap.set("n", "<leader>fg", "<cmd>lua require'telescope'.extensions.goimpl.goimpl{}<cr>")
+keymap.set("n", "<leader>gf", "<cmd>Telescope advanced_git_search diff_commit_file<cr>") --Diff current file with commit, see: https://github.com/aaronhallaert/advanced-git-search.nvim#%EF%B8%8F-commands
+keymap.set("n", "<leader>gl", "<cmd>Telescope advanced_git_search diff_commit_line<cr>") --Diff current file with selected line history
+
+--lsp config - Lspsaga
+keymap.set("n", "gf", "<cmd>Lspsaga finder<cr>", opts)
+keymap.set("n", "gd", "<cmd>Lspsaga peek_definition<cr>", opts)
+keymap.set("n", "gd", "<cmd>Lspsaga peek_type_definition<cr>", opts)
+keymap.set("n", "<F1>", "<cmd>Lspsaga code_action<cr>", opts)
+keymap.set("n", "<F2>", "<cmd>Lspsaga rename<cr>", opts)
+keymap.set("n", "gh", "<cmd>Lspsaga show_line_diagnostics<cr>", opts)
+keymap.set("n", "gh", "<cmd>Lspsaga show_cursor_diagnostics<cr>", opts)
+keymap.set("n", "<Tab>", "<cmd>Lspsaga diagnostic_jump_next<cr>", opts)
+keymap.set("n", "<S-Tab>", "<cmd>Lspsaga diagnostic_jump_prev<cr>", opts)
+keymap.set("n", "K", "<cmd>Lspsaga hover_doc<cr>", opts)
+keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", opts)
+keymap.set("n", "gI", "<cmd>lua vim.lsp.buf.implementation()<cr>", opts)
+keymap.set("n", "<F6>", "<cmd>Lspsaga outline<cr>", opts)
 
 -- harpoon
 keymap.set("n", "<leader>ha", ":lua require('harpoon.mark').add_file()<cr>", opts)
@@ -105,6 +122,18 @@ keymap.set("n", "<leader>sd", ":SDelete<cr>", opts)
 keymap.set("n", "<leader>sl", ":SLoad<cr>", opts)
 keymap.set("n", "<leader>sc", ":SClose<cr>", opts)
 
+-- code fold
+vim.keymap.set("n", "zz", require("ufo").closeFoldsWith) -- closeAllFolds == closeFoldsWith(0)
+vim.keymap.set("n", "zx", require("ufo").openFoldsExceptKinds)
+keymap.set("n", "zZ", require("ufo").closeAllFolds)
+keymap.set("n", "zX", require("ufo").openAllFolds)
+vim.keymap.set("n", "zc", function()
+	local winid = require("ufo").peekFoldedLinesUnderCursor()
+	if not winid then
+		vim.lsp.buf.hover()
+	end
+end) -- hover preview
+
 -- trouble
 keymap.set("n", "<leader>xx", "<cmd>TroubleToggle<cr>", opts)
 keymap.set("n", "<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<cr>", opts)
@@ -117,8 +146,8 @@ keymap.set("n", "<leader>xg", "<cmd>TroubleToggle lsp_references<cr>", opts)
 -- lazygit
 keymap.set("n", "<leader>gg", ":LazyGit<cr>", opts)
 keymap.set("n", "<leader>gc", ":LazyGitConfig<cr>", opts)
-keymap.set("n", "<leader>gf", ":LazyGitFilter<cr>", opts)
-keymap.set("n", "<leader>gff", ":LazyGitFilterCurrentFile<cr>", opts)
+-- keymap.set("n", "<leader>gf", ":LazyGitFilter<cr>", opts)
+-- keymap.set("n", "<leader>gff", ":LazyGitFilterCurrentFile<cr>", opts)
 
 -- gitsign
 keymap.set("n", "<leader>gb", ":Gitsigns toggle_current_line_blame<cr>", opts)

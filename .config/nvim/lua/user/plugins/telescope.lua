@@ -11,10 +11,15 @@ end
 telescope.setup({
 	defaults = {
 
-		prompt_prefix = " ",
-		selection_caret = " ",
+		prompt_prefix = " ",
+		selection_caret = " ",
 		path_display = { "smart" },
-
+		layout_strategy = "vertical",
+		layout_config = {
+			vertical = {
+				preview_cutoff = 1,
+			},
+		},
 		mappings = {
 			i = {
 				["<C-n>"] = actions.cycle_history_next,
@@ -23,18 +28,18 @@ telescope.setup({
 				["<C-j>"] = actions.move_selection_next,
 				["<C-k>"] = actions.move_selection_previous,
 
-				["<A-x>"] = actions.close,
+				["<A-q>"] = actions.close,
 
 				["<Down>"] = actions.move_selection_next,
 				["<Up>"] = actions.move_selection_previous,
 
 				["<CR>"] = actions.select_default,
-				["<C-x>"] = actions.select_horizontal,
-				["<C-v>"] = actions.select_vertical,
+				["<C-->"] = actions.select_horizontal,
+				["<C-\\>"] = actions.select_vertical,
 				["<C-t>"] = actions.select_tab,
 
-				["<C-u>"] = actions.preview_scrolling_up,
-				["<C-d>"] = actions.preview_scrolling_down,
+				["<A-k>"] = actions.preview_scrolling_up,
+				["<A-j>"] = actions.preview_scrolling_down,
 
 				["<PageUp>"] = actions.results_scrolling_up,
 				["<PageDown>"] = actions.results_scrolling_down,
@@ -42,23 +47,24 @@ telescope.setup({
 				["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
 				["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
 				["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
-				["<M-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
+				-- ["<M-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
 				["<C-l>"] = actions.complete_tag,
 				["<C-_>"] = actions.which_key, -- keys from pressing <C-/>
 			},
 
 			n = {
 				["<esc>"] = actions.close,
-				["<A-x>"] = actions.close,
+				["q"] = actions.close,
+				["<A-q>"] = actions.close,
 				["<CR>"] = actions.select_default,
-				["<C-x>"] = actions.select_horizontal,
-				["<C-v>"] = actions.select_vertical,
+				["<C-->"] = actions.select_horizontal,
+				["<C-\\>"] = actions.select_vertical,
 				["<C-t>"] = actions.select_tab,
 
 				["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
 				["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
 				["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
-				["<M-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
+				-- ["<M-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
 
 				["j"] = actions.move_selection_next,
 				["k"] = actions.move_selection_previous,
@@ -71,8 +77,8 @@ telescope.setup({
 				["gg"] = actions.move_to_top,
 				["G"] = actions.move_to_bottom,
 
-				["<C-u>"] = actions.preview_scrolling_up,
-				["<C-d>"] = actions.preview_scrolling_down,
+				["<A-k>"] = actions.preview_scrolling_up,
+				["<A-j>"] = actions.preview_scrolling_down,
 
 				["<PageUp>"] = actions.results_scrolling_up,
 				["<PageDown>"] = actions.results_scrolling_down,
@@ -89,6 +95,17 @@ telescope.setup({
 		-- }
 		-- Now the picker_config_key will be applied every time you call this
 		-- builtin picker
+		buffers = {
+			show_all_buffers = true,
+			sort_lastused = true,
+			theme = "dropdown",
+			previewer = false,
+			mappings = {
+				i = {
+					["<c-d>"] = "delete_buffer",
+				},
+			},
+		},
 	},
 	extensions = {
 		-- Your extension configuration goes here:
@@ -101,3 +118,4 @@ telescope.setup({
 
 telescope.load_extension("fzf")
 telescope.load_extension("goimpl")
+telescope.load_extension("advanced_git_search")
