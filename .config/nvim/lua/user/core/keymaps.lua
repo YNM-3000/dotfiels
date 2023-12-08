@@ -19,6 +19,9 @@ keymap.set("n", "c'", 'ci"', opts)
 keymap.set("n", "y'", 'yi"', opts)
 keymap.set("n", "d'", 'di"', opts)
 
+-- temp empty buffer
+keymap.set("n", "gn", ":tabnew<CR>", opts)
+
 keymap.set("n", "<leader>nh", ":nohl<CR>", opts) -- clear search
 keymap.set("n", "<leader>-", "<C-x>") -- minus number
 keymap.set("n", "<leader>+", "<C-a>") -- add number
@@ -45,6 +48,8 @@ keymap.set("n", "<A-Right>", ":vertical resize -2<CR>", opts)
 -- Navigate buffers
 keymap.set("n", "<A-l>", ":bnext<CR>", opts)
 keymap.set("n", "<A-h>", ":bprevious<CR>", opts)
+keymap.set("n", "<A-L>", "<Cmd>BufferLineMoveNext<CR>", opts)
+keymap.set("n", "<A-H>", "<Cmd>BufferLineMovePrev<CR>", opts)
 keymap.set("n", "<A-d>", ":bp<bar>sp<bar>bn<bar>bd<CR>", opts) -- close buffer without closing the window,see:https://stackoverflow.com/questions/1444322/how-can-i-close-a-buffer-without-closing-the-window
 
 -- tabs
@@ -109,9 +114,6 @@ keymap.set("n", "<leader>hh", ":lua require('harpoon.ui').toggle_quick_menu()<cr
 keymap.set("n", "<leader>hj", ":lua require('harpoon.ui').nav_next()<cr>", opts)
 keymap.set("n", "<leader>hk", ":lua require('harpoon.ui').nav_prev()<cr>", opts)
 
--- tagbar
-keymap.set("n", "<F8>", ":TagbarToggle<cr>", opts)
-
 -- undotree
 keymap.set("n", "<F5>", ":UndotreeToggle<cr>", opts)
 
@@ -122,12 +124,12 @@ keymap.set("n", "<leader>sd", ":SDelete<cr>", opts)
 keymap.set("n", "<leader>sl", ":SLoad<cr>", opts)
 keymap.set("n", "<leader>sc", ":SClose<cr>", opts)
 
--- code fold
-vim.keymap.set("n", "zz", require("ufo").closeFoldsWith) -- closeAllFolds == closeFoldsWith(0)
-vim.keymap.set("n", "zx", require("ufo").openFoldsExceptKinds)
-keymap.set("n", "zZ", require("ufo").closeAllFolds)
-keymap.set("n", "zX", require("ufo").openAllFolds)
-vim.keymap.set("n", "zc", function()
+-- ufo (for code fold)
+keymap.set("n", "zz", ":foldclose<cr>", opts)
+keymap.set("n", "zx", ":foldopen<cr>", opts)
+keymap.set("n", "zZ", require("ufo").closeAllFolds, opts)
+keymap.set("n", "zX", require("ufo").openAllFolds, opts)
+keymap.set("n", "zp", function()
 	local winid = require("ufo").peekFoldedLinesUnderCursor()
 	if not winid then
 		vim.lsp.buf.hover()
@@ -161,7 +163,7 @@ keymap.set("n", "<leader>gt", ":Gitsigns diffthis<cr>", opts)
 
 -- diffview
 keymap.set("n", "<leader>gd", ":DiffviewOpen<cr>", opts)
-keymap.set("n", "<leader>gD", ":DiffviewClose<cr>", opts) -- Close the current diffview. You can also use :tabclose.
+keymap.set("n", "<A-q>", ":DiffviewClose<cr>", opts) -- Close the current diffview. You can also use :tabclose.
 keymap.set("n", "<leader>gh", ":DiffviewFileHistory %<cr>", opts) -- Opening file history for current branch:
 
 -- -- git conflict

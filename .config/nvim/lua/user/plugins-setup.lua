@@ -148,9 +148,6 @@ return packer.startup(function(use)
 	-- mark file and navigation
 	use("ThePrimeagen/harpoon")
 
-	-- file struct
-	use("preservim/tagbar")
-
 	-- undo
 	use("mbbill/undotree")
 
@@ -160,14 +157,8 @@ return packer.startup(function(use)
 	-- -- preview
 	-- use("frabjous/knap")
 
-	-- -- translate
-	-- use("potamides/pantran.nvim")
-
 	-- trouble
 	use("folke/trouble.nvim")
-
-	-- -- term
-	-- use({ "akinsho/toggleterm.nvim", tag = "*" })
 
 	-- leap
 	use("ggandor/leap.nvim")
@@ -197,7 +188,7 @@ return packer.startup(function(use)
 	-- conflict
 	use({ "akinsho/git-conflict.nvim", tag = "*" })
 
-	-- diffview
+	-- git history
 	use("rhysd/git-messenger.vim")
 	----------- AI
 	-- code assitant
