@@ -7,14 +7,23 @@ saga.setup({
 	-- scroll_preview = { prev = "<C-f>", next = "<C-j>" },
 	finder = {
 		keys = {
-			toggle_or_open = "<CR>",
-			vsplit = "\\",
+			toggle_or_open = "o",
+			vsplit = "<C-o>",
 		},
 	},
 	definition = {
 		keys = {
-			edit = "<CR>",
-			vsplit = "\\",
+			edit = "o",
+			vsplit = "<C-o>",
 		},
+	},
+	callhierarchy = {
+		keys = {
+			edit = "o",
+			vsplit = "<C-o>",
+		},
+	},
+	ui = {
+		-- code_action = "",
 	},
 })
