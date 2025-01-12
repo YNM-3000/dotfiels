@@ -5,6 +5,9 @@ end
 
 saga.setup({
 	-- scroll_preview = { prev = "<C-f>", next = "<C-j>" },
+	lightbulb = {
+		enable = false,
+	},
 	finder = {
 		keys = {
 			toggle_or_open = "<cr>",
@@ -25,5 +28,8 @@ saga.setup({
 	},
 	ui = {
 		-- code_action = "",
+	},
+	rename = {
+		in_select = false,
 	},
 })

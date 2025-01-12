@@ -119,3 +119,4 @@ telescope.setup({
 telescope.load_extension("fzf")
 telescope.load_extension("goimpl")
 telescope.load_extension("advanced_git_search")
+telescope.load_extension("undo")

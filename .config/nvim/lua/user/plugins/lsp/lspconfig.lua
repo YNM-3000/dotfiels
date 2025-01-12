@@ -52,7 +52,7 @@ capabilities.textDocument.foldingRange = {
 	lineFoldingOnly = true,
 }
 
-local servers = require("user.plugins.lsp.settings.servers")
+local servers = require("user.plugins.lsp.settings")
 
 for _, server in pairs(servers.server_settings) do
 	local settings = {

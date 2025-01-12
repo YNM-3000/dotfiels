@@ -179,4 +179,15 @@ alias setGitProxy='git config --global http.proxy $WSLHOST'
 alias unsetGitProxy='git config --global --unset http.proxy'
 export NODE_OPTIONS='--openssl-legacy-provider'
 alias nn='neofetch'
-nn
+# nn
+
+alias python=python3
+
+export NVM_DIR=“$HOME/.nvm”
+[ -s “$NVM_DIR/nvm.sh” ] && \. “$NVM_DIR/nvm.sh”  # This loads nvm
+[ -s “$NVM_DIR/bash_completion” ] && \. “$NVM_DIR/bash_completion”  # This loads nvm bash_completion
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
+
+# Added by Windsurf
+export PATH="/Users/tcg/.codeium/windsurf/bin:$PATH"

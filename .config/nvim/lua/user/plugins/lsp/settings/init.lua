@@ -2,7 +2,7 @@ local M = {}
 
 M.server_settings = {
 	ts = {
-		name = "tsserver",
+		name = "ts_ls",
 	},
 	html = {
 		name = "html",
@@ -23,7 +23,7 @@ M.server_settings = {
 	},
 	json = {
 		name = "jsonls",
-		settings = require("user.plugins.lsp.settings.jsonls"),
+		-- settings = require("user.plugins.lsp.settings.jsonls"),
 	},
 	-- go = {
 	-- 	name = "gopls", -- no need to install because of vim-go but need to be included in lspconfig
@@ -32,10 +32,10 @@ M.server_settings = {
 		name = "volar",
 		settings = require("user.plugins.lsp.settings.vue"),
 	},
-	java = {
-		name = "jdtls",
-		settings = require("user.plugins.lsp.settings.java"),
-	},
+	-- java = {
+	-- 	name = "jdtls",
+	-- 	settings = require("user.plugins.lsp.settings.java"),
+	-- },
 	rust = {
 		name = "rust_analyzer",
 		-- settings = require("user.plugins.lsp.settings.rust"),
@@ -48,7 +48,6 @@ for _, server in pairs(M.server_settings) do
 end
 
 M.formatter_and_linters = {
-	"rustfmt",
 	"google-java-format",
 	"prettier",
 	"stylua",

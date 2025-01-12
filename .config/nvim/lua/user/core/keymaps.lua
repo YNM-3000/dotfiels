@@ -18,6 +18,7 @@ keymap.set("n", "v'", 'vi"', opts)
 keymap.set("n", "c'", 'ci"', opts)
 keymap.set("n", "y'", 'yi"', opts)
 keymap.set("n", "d'", 'di"', opts)
+keymap.set("n", "gsw", ":%s/<C-r><C-w>/", opts) -- Replace word under cursor
 
 -- temp empty buffer
 keymap.set("n", "gn", ":tabnew<CR>", opts)
@@ -61,8 +62,8 @@ keymap.set("n", "<A-[>", ":tabp<CR>", opts) -- go to previous tab
 -- Move text up and down
 keymap.set("n", "<A-j>", ":m .+1<CR>==", opts) -- move line down
 keymap.set("n", "<A-k>", ":m .-2<CR>==", opts) -- move line up
-keymap.set("n", "<A-S-j>", "yyp==", opts) -- copy line down
-keymap.set("n", "<A-S-k>", "yyP==", opts) -- copy line up
+keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", opts) -- Move line down in visual mode
+keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", opts) -- Move line up in visual mode
 
 keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", opts) -- move lines down :m means :move use :h :m to see details
 keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", opts) -- move lines up
@@ -89,6 +90,7 @@ keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>")
 keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>")
 keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>")
 keymap.set("n", "<leader>fd", "<cmd>Telescope diagnostics<cr>")
+keymap.set("n", "<leader>fu", "<cmd>Telescope undo<cr>")
 keymap.set("n", "<leader>fg", "<cmd>lua require'telescope'.extensions.goimpl.goimpl{}<cr>")
 keymap.set("n", "<leader>gf", "<cmd>Telescope advanced_git_search diff_commit_file<cr>") --Diff current file with commit, see: https://github.com/aaronhallaert/advanced-git-search.nvim#%EF%B8%8F-commands
 keymap.set("n", "<leader>gl", "<cmd>Telescope advanced_git_search diff_commit_line<cr>") --Diff current file with selected line history
