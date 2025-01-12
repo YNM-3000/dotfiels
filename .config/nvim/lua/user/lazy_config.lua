@@ -217,12 +217,6 @@ return {
 		"lewis6991/gitsigns.nvim",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
-			{
-				"purarue/gitsigns-yadm.nvim",
-				opts = {
-					shell_timeout_ms = 1000,
-				},
-			},
 		},
 	},
 	"kdheepak/lazygit.nvim",
