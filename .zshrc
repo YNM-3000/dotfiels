@@ -159,16 +159,15 @@ export EDITOR="$VISUAL"
 
 export PATH="/opt/homebrew/opt/node@18/bin:$PATH"
 
-function ranger_func {
-    ranger $*
-    local quit_cd_wd_file="$HOME/.ranger_quit_cd_wd"
-    if [ -s "$quit_cd_wd_file" ]; then
-        cd "$(cat $quit_cd_wd_file)"
-        true > "$quit_cd_wd_file"
-    fi
+function yazi_func() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
 }
-
-alias rn='ranger_func'
+alias yy='yazi_func'
 
 export HOSTIP=$(cat /etc/resolv.conf|grep "nameserver"|cut -f 2 -d " ")
 export WSLHOST="$HOSTIP:7890"

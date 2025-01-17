@@ -9,8 +9,24 @@ return {
 
 	-- color highlighter
 	{ "norcalli/nvim-colorizer.lua" },
-
-	"christoomey/vim-tmux-navigator", -- tmux & split window navigation
+	{
+		"christoomey/vim-tmux-navigator",
+		cmd = {
+			"TmuxNavigateLeft",
+			"TmuxNavigateDown",
+			"TmuxNavigateUp",
+			"TmuxNavigateRight",
+			"TmuxNavigatePrevious",
+			"TmuxNavigatorProcessList",
+		},
+		keys = {
+			{ "<C-h>", "<cmd>TmuxNavigateLeft<cr>" },
+			{ "<C-j>", "<cmd>TmuxNavigateDown<cr>" },
+			{ "<C-k>", "<cmd>TmuxNavigateUp<cr>" },
+			{ "<C-l>", "<cmd>TmuxNavigateRight<cr>" },
+			{ "<C-\\>", "<cmd>TmuxNavigatePrevious<cr>" },
+		},
+	},
 	"szw/vim-maximizer", -- maximizes and restores current window
 
 	-- essential plugins
@@ -193,21 +209,21 @@ return {
 	"lukas-reineke/indent-blankline.nvim",
 
 	-- message and command line
-	-- {
-	-- 	"folke/noice.nvim",
-	-- 	event = "VeryLazy",
-	-- 	opts = {
-	-- 		-- add any options here
-	-- 	},
-	-- 	dependencies = {
-	-- 		-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-	-- 		"MunifTanjim/nui.nvim",
-	-- 		-- OPTIONAL:
-	-- 		--   `nvim-notify` is only needed, if you want to use the notification view.
-	-- 		--   If not available, we use `mini` as the fallback
-	-- 		"rcarriga/nvim-notify",
-	-- 	},
-	-- },
+	{
+		"folke/noice.nvim",
+		event = "VeryLazy",
+		opts = {
+			-- add any options here
+		},
+		dependencies = {
+			-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+			"MunifTanjim/nui.nvim",
+			-- OPTIONAL:
+			--   `nvim-notify` is only needed, if you want to use the notification view.
+			--   If not available, we use `mini` as the fallback
+			"rcarriga/nvim-notify",
+		},
+	},
 
 	-------- go --------
 	"fatih/vim-go",

@@ -38,6 +38,7 @@ treesitter.setup({
 		"python",
 		"go",
 		"rust",
+		"regex",
 	},
 	auto_install = true,
 	incremental_selection = {
