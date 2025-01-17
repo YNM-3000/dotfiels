@@ -65,6 +65,8 @@ keymap.set("n", "<A-k>", ":m .-2<CR>==", opts) -- move line up
 keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", opts) -- Move line down in visual mode
 keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", opts) -- Move line up in visual mode
 
+keymap.set("n", "<A-S-j>", "yyp==", opts) -- copy line down
+keymap.set("n", "<A-S-k>", "yyP==", opts) -- copy line up
 keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", opts) -- move lines down :m means :move use :h :m to see details
 keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", opts) -- move lines up
 -- keymap.set("v", "<A-S-j>", "yp==gv", opts) -- TODO:copy lines down
@@ -139,6 +141,10 @@ keymap.set("n", "zp", function()
 		vim.lsp.buf.hover()
 	end
 end) -- hover preview
+
+-- noice
+keymap.set("n", "<leader>nn", ":Noice dismiss<cr>", opts)
+keymap.set("n", "<leader>nm", ":Noice all<cr>", opts)
 
 -- trouble
 keymap.set("n", "<leader>xx", "<cmd>TroubleToggle<cr>", opts)
